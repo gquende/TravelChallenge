@@ -37,6 +37,36 @@ List<Activity> activities = [
       price: 125),
 ];
 
-List<Destination> destinations= [
-Destination(imageUrl: 'assets/images/venice.jpg',city: 'Venice', country: 'Italy',description: 'Visit Venice is a beautiful city looking for someone.',activities: activities)
+List<Destination> destinations = [
+  Destination(
+      imageUrl: 'assets/images/venice.jpg',
+      city: 'Venice',
+      country: 'Italy',
+      description: 'Visit Venice is a beautiful city looking for someone.',
+      activities: activities),
+  Destination(
+      imageUrl: 'assets/images/paris.jpg',
+      city: 'Paris',
+      country: 'France',
+      description: 'Visit Paris is a beautiful city looking for someone.',
+      activities: activities),
+  Destination(
+      imageUrl: 'assets/images/newdelhi.jpg',
+      city: 'New Delhi',
+      country: 'India',
+      description: 'Visit New Delhi is a beautiful city looking for someone.',
+      activities: activities),
+  Destination(
+      imageUrl: 'assets/images/saopaulo.jpg',
+      city: 'Sao Paulo',
+      country: 'Brazil',
+      description: 'Visit Sao Paulo is a beautiful city looking for someone.',
+      activities: activities),
+  Destination(
+      imageUrl: 'assets/images/paris.jpg',
+      city: 'New York City',
+      country: 'USA',
+      description:
+          'Visit New York City is a beautiful city looking for someone.',
+      activities: activities),
 ];

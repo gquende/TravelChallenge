@@ -1,3 +1,4 @@
+import 'package:angotravel/widgets/destination_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,7 +8,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
   List<IconData> _icons = [
+    //Lista de icones que sera apresentado no top
     FontAwesomeIcons.plane,
     FontAwesomeIcons.bed,
     FontAwesomeIcons.walking,
@@ -15,16 +19,30 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   Widget _buildIcon(int index) {
-    return Container(
-      height: 60.0,
-      width: 60.0,
-      decoration: BoxDecoration(
-          color: Theme.of(context).accentColor,
-          borderRadius: BorderRadius.circular(30.0)),
-      child: Icon(
-        _icons[index],
-        size: 25.0,
-        color: Theme.of(context).primaryColor,
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedIndex = index;
+        });
+
+        print(_selectedIndex);
+      },
+      child: Container(
+        height: 60.0,
+        width: 60.0,
+        decoration: BoxDecoration(
+            color: _selectedIndex == index
+                ? Theme.of(context).accentColor
+                : Color(
+                    0xFFE7EBEE), //Define a cora com base os cliques que ira receber
+            borderRadius: BorderRadius.circular(30.0)),
+        child: Icon(
+          _icons[index],
+          size: 25.0,
+          color: _selectedIndex == index
+              ? Theme.of(context).primaryColor
+              : Color(0xFFBAC1C4),
+        ),
       ),
     );
   }
@@ -52,7 +70,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     .asMap()
                     .entries
                     .map((MapEntry map) => _buildIcon(map.key))
-                    .toList())
+                    .toList()),
+            SizedBox(
+              height: 20.0,
+            ),
+            DestinationCarousel()
           ],
         ),
       ),
