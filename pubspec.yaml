@@ -13,7 +13,7 @@ dependencies:
 
   cupertino_icons: ^0.1.3
   font_awesome_flutter: ^8.5.0
-
+  curved_navigation_bar:
 dev_dependencies:
   flutter_test:
     sdk: flutter
