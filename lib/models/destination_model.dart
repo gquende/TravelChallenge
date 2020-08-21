@@ -52,20 +52,20 @@ List<Destination> destinations = [
       activities: activities),
   Destination(
       imageUrl: 'assets/images/tundavala.jpg',
-      city: 'Fendas Tundavala',
+      city: 'Fendas',
       country: 'Huila',
-      description: 'Impressiona-se com uma cave que ja mais imaginou',
+      description: 'Impressiona-se com uma cave que ja',
       activities: activities),
   Destination(
       imageUrl: 'assets/images/baia.jpg',
       city: 'Baia Farta',
       country: 'Benguela',
-      description: 'Ao Alto mar azul, venha divertir-se ao bom som.',
+      description: 'Ao Alto mar azul, venha divertir-se ao ',
       activities: activities),
   Destination(
       imageUrl: 'assets/images/deserto.jpg',
       city: 'Deserto do Namibe',
       country: 'Namibe',
-      description: 'Uma vista magnifica a planta rara, na companhia de Orix.',
+      description: 'Uma vista magnifica a planta rara,.',
       activities: activities),
 ];

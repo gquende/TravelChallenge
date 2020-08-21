@@ -49,7 +49,7 @@ class HotelCarousel extends StatelessWidget {
 
               return Container(
                 margin: EdgeInsets.all(10.0),
-                width: 210.0,
+                width: 240.0,
                 child: Stack(
                   alignment:
                       Alignment.topCenter, //Para alinhar a pinha no centro
@@ -58,7 +58,7 @@ class HotelCarousel extends StatelessWidget {
                       bottom:
                           5.0, //Para posicionar a descricao abaixo da Imagem
                       child: Container(
-                        width: 200.0,
+                        width: 240.0,
                         height: 120.0,
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -66,7 +66,7 @@ class HotelCarousel extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.all(10.0),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               SizedBox(
                                 height: 20.0,
@@ -78,9 +78,21 @@ class HotelCarousel extends StatelessWidget {
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 1.2),
+                              ),
+                              SizedBox(
+                                height: 1.2,
                               ), //Invoca o valor de uma variavel numa String
                               Text(hotel.address,
                                   style: TextStyle(color: Colors.grey)),
+                              SizedBox(
+                                height: 2.0,
+                              ),
+                              Text(
+                                '\$${hotel.price} /night',
+                                style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
                             ],
                           ),
                         ),
@@ -96,22 +108,18 @@ class HotelCarousel extends StatelessWidget {
                                 offset: Offset(0.0, 2.0),
                                 blurRadius: 6.0)
                           ]),
-                      child: Stack(
-                        children: <Widget>[
-                          ClipRRect(
-                            //Arredondar as bordas do Container
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: Image(
-                              height: 180.0,
-                              width: 180.0,
-                              image: AssetImage(hotel.imageUrl),
-                              fit: BoxFit
-                                  .cover, // para expandir conforme o tamnho do seu container
-                            ),
-                          ),
-                          //Coloca os destino e pais sobreposto na Imagem
-                        ],
+                      child: ClipRRect(
+                        //Arredondar as bordas do Container
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Image(
+                          height: 180.0,
+                          width: 220.0,
+                          image: AssetImage(hotel.imageUrl),
+                          fit: BoxFit
+                              .cover, // para expandir conforme o tamnho do seu container
+                        ),
                       ),
+                      //Coloca os destino e pais sobreposto na Imagem
                     )
                   ],
                 ),

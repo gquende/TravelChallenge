@@ -12,6 +12,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   List<IconData> _icons = [
     //Lista de icones que sera apresentado no top
@@ -62,84 +63,60 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-          child: ListView(
-            padding:
-                EdgeInsets.symmetric(vertical: 30.0), //Pesquisar sobre isso
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(left: 20, right: 120.0),
-                child: Text(
-                  'O que voce está a procura?',
-                  style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-                ),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.symmetric(vertical: 30.0), //Pesquisar sobre isso
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 120.0),
+              child: Text(
+                'O que voce está a procura?',
+                style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: _icons
-                      .asMap()
-                      .entries
-                      .map((MapEntry map) => _buildIcon(map.key))
-                      .toList()),
-              SizedBox(
-                height: 20.0,
-              ),
-              DestinationCarousel(),
-              SizedBox(
-                height: 20.0,
-              ),
-              HotelCarousel(),
-              SizedBox(
-                height: 20.0,
-              ),
-              DestinationCarousel(),
-            ],
-          ),
-        ),
-        bottomNavigationBar: CurvedNavigationBar(
-          index: 2, //Para aonde a selecao ficara quando o App iniciar
-          animationDuration:
-              Duration(milliseconds: 200), //Para definir a duracao
-          color: Colors.white,
-          height: 70,
-          animationCurve: Curves.bounceIn,
-
-          backgroundColor: Colors.blue,
-          buttonBackgroundColor: Colors.white,
-          items: <Widget>[
-            //Define o que serao como icones
-            Icon(
-              Icons.verified_user,
-              size: 30,
-              color: Colors.black,
             ),
-            Icon(
-              Icons.favorite,
-              size: 30,
-              color: Colors.black,
+            SizedBox(
+              height: 20.0,
             ),
-            Icon(
-              Icons.exit_to_app,
-              size: 30,
-              color: Colors.black,
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: _icons
+                    .asMap()
+                    .entries
+                    .map((MapEntry map) => _buildIcon(map.key))
+                    .toList()),
+            SizedBox(
+              height: 20.0,
             ),
-            Icon(
-              Icons.add,
-              size: 30,
-              color: Colors.black,
+            DestinationCarousel(),
+            SizedBox(
+              height: 20.0,
             ),
-            Icon(
-              Icons.list,
-              size: 30,
-              color: Colors.black,
-            )
+            HotelCarousel(),
           ],
-          onTap: (index) {
-            debugPrint("Current Index is $index");
-          },
-        ));
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        onTap: (int index) {
+          setState(() {
+            _currentTab = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home, size: 30.0),
+              title: _currentTab != 0 ? SizedBox.shrink() : Text('')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search, size: 30.0),
+              title: _currentTab != 1 ? SizedBox.shrink() : Text('')),
+          BottomNavigationBarItem(
+              icon: CircleAvatar(
+                radius: 15.0,
+                backgroundImage: NetworkImage('http://i.imgur.com/zL4Krbz.jpg'),
+              ),
+              title: Text(''))
+        ],
+      ),
+    );
   }
 }
