@@ -88,7 +88,7 @@ class HotelCarousel extends StatelessWidget {
                                 height: 2.0,
                               ),
                               Text(
-                                '\$${hotel.price} /night',
+                                '${hotel.price} AOA /noite',
                                 style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w600),

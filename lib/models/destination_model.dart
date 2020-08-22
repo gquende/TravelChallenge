@@ -18,23 +18,33 @@ class Destination {
 
 List<Activity> activities = [
   Activity(
-      imageUrl: 'assets/images/stmarksbasilica.jpg',
-      name: 'St. Mark Baselica',
-      startTimes: ['9:00 am', '11:00 am'],
+      imageUrl: 'assets/images/elefante.jpg',
+      name: 'Fauna Incrivel',
+      startTimes: ['9:00', '11:00'],
       rating: 5,
-      price: 30),
+      price: 30,
+      type: 'Turismo'),
   Activity(
-      imageUrl: 'assets/images/stmarksbasilica.jpg',
-      name: 'St. Mark Baselica',
-      startTimes: ['11:00 pm', '11:00 pm'],
+      imageUrl: 'assets/images/luanda.jpg',
+      name: 'Restaurantes',
+      startTimes: ['11:00', '12:00'],
       rating: 4,
-      price: 210),
+      price: 210,
+      type: 'Alimentacao'),
   Activity(
-      imageUrl: 'assets/images/stmarksbasilica.jpg',
-      name: 'St. Mark Baselica',
-      startTimes: ['11:00 pm', '11:00 pm'],
+      imageUrl: 'assets/images/surf.jpg',
+      name: 'Surfs',
+      startTimes: ['14:00', '15:00'],
       rating: 3,
-      price: 125),
+      price: 125,
+      type: 'Lazer'),
+  Activity(
+      imageUrl: 'assets/images/jirafas.jpg',
+      name: 'Fauna',
+      startTimes: ['8:00', '10:00'],
+      rating: 3,
+      price: 125,
+      type: 'Turismo'),
 ];
 
 List<Destination> destinations = [
