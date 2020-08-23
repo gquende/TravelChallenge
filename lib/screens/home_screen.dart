@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 30.0), //Pesquisar sobre isso
+          padding: EdgeInsets.symmetric(vertical: 30.0), //Pesquisar sobre iss
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 20, right: 120.0),
